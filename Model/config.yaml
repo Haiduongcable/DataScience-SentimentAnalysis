@@ -1,0 +1,10 @@
+model:
+  device: 'cuda'
+  batchsize: 1
+  inference: True
+preprocess:
+  use_stopword: False
+
+postprocess:
+
+    

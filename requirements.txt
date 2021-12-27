@@ -1,0 +1,12 @@
+flask
+Flask-SQLAlchemy
+flask-login
+pandas 
+torch 
+sklearn
+matplotlib
+transformers
+underthesea
+yaml 
+numpy
+googledrivedownloader
