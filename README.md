@@ -11,6 +11,7 @@ $ pip install -r requirements.txt
 ## Start Website
 ```
 $ cd Visualize
+$ mkdir weights
 $ python download_checkpoint.py
 $ python main.py
 ```
