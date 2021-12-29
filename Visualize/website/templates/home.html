@@ -1,14 +1,8 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
+
 <h1 align="center">Sentiment Analysis</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    
-  </li>
-  {% endfor %}
-</ul>
+
 <form method="POST">
   <textarea name="note" id="note" class="form-control"></textarea>
   <br />
@@ -16,4 +10,18 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+{% if num_negative %}
+<p id="text">Number review</p>
+<p id="text">{{ num_review }}</p>
+<p id="text">Number negative</p>
+<p id="text">{{ num_negative }}</p>
+<img src="/static/piechar.png" alt="Pie Char">
+{% endif %}
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in notes %}
+ <li>
+  {{ note }}
+  {% endfor %}
+  </li>
+</ul>
 {% endblock %}

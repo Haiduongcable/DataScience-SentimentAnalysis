@@ -1,5 +1,5 @@
 model:
-  device: 'cuda'
+  device: 'cpu'
   batchsize: 1
   inference: True
 preprocess:

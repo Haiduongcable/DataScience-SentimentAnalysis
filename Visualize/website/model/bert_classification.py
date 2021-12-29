@@ -22,6 +22,7 @@ class PhoBert_Classification(torch.nn.Module):
         self.dropout2 = nn.Dropout(0.6)
         #softmax activation function (Log softmax)
         self.softmax = nn.LogSoftmax(dim=1)
+        # self.softmax = nn.Softmax(dim=1)
     
     def forward(self, sent_id):
     

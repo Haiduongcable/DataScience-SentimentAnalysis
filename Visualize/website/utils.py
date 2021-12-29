@@ -7,6 +7,25 @@ import math
 from underthesea import word_tokenize
 import re
 import yaml
+import validators
+import matplotlib.pyplot as plt
+
+def show_pie_char(num_negative, num_review):
+    labels = 'Negative', 'Positive'
+    sizes = [num_negative, num_review - num_negative]
+    explode = (0.1, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.savefig('./website/static/piechar.png')
+
+
+def check_validation_url(string_input):
+    result = validators.url(string_input)
+    return result
+
 def remove_emojis(data):
     emoj = re.compile("["
         u"\U0001F600-\U0001F64F" 
