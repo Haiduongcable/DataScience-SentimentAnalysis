@@ -13,7 +13,6 @@ $ pip install -r requirements.txt
 $ cd Visualize
 $ mkdir weights
 $ python download_checkpoint.py
-$ python main.py
 ```
 
 ## Set config device
