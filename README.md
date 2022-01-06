@@ -21,6 +21,7 @@ Setting your inference device: "cpu || cuda"
 ```
 $ cd Visualize
 ```
+Open config.yaml
 Edit device: "cpu" or "cuda"
 
 
