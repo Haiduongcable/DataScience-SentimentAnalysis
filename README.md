@@ -21,8 +21,7 @@ Setting your inference device: "cpu || cuda"
 ```
 $ cd Visualize
 ```
-Open config.yaml
-Edit device: "cpu" or "cuda"
+Open config.yaml and edit device: "cpu" or "cuda"
 
 
 ## Start Service
