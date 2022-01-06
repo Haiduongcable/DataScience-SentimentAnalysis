@@ -40,9 +40,13 @@ def crawl(url,driver, amount=9999999):
     xpath_title_cmt = "//*[contains(@class,'review-comment__title')]"
     xpath_num_review = "//*[contains(@class,'number')]"
     xpath_next_btn = "//a[@class='btn next']"
-    # element_num_review = driver.find_elements_by_xpath(xpath_num_review)[0].text
-    # num_review = get_num_review(element_num_review)
-    # if amount  num_review:
+    log_tmp_review = driver.find_elements_by_xpath(xpath_num_review)
+    if len(log_tmp_review) == 0:
+        return result
+    element_num_review = log_tmp_review[0].text
+    num_review = get_num_review(element_num_review)
+    if amount > num_review:
+        amount = num_review
         
     while amount > 0:
         driver.execute_script("window.scrollBy(0,50000)")

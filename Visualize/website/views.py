@@ -16,8 +16,8 @@ sentiment_analysis = Sentiment_Analysis(2)
 @views.route('/', methods=['GET', 'POST'])
 def home():
     notes = []
-    count_negative = ''
-    count_review = ''
+    count_negative = 0
+    count_review = 0
     if request.method == 'POST':
         review = request.form.get('note')
         if len(review) < 1:
@@ -43,11 +43,13 @@ def home():
                     notes.append(l_used_review[index])
             count_review = len(l_predict)
             show_pie_char(count_negative,count_review)
-            count_negative = str(count_negative)
-            count_review = str(count_review)
-            
+            count_negative = count_negative
+            count_review = count_review
+            if count_review == 0:
+                flash('Sản phẩm này không có review!', category='error')
     return render_template("home.html", notes=notes, num_negative = count_negative, num_review = count_review)
-
+    # else:
+    #     return render_template("home.html", )
 
 # @views.route('/delete-note', methods=['POST'])
 # def delete_note():
