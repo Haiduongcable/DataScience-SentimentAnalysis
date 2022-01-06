@@ -8,11 +8,25 @@ Analysis comments in shopping website
 $ pip install -r requirements.txt
 ```
 
-## Start Website
+## Download Checkpoint
 ```
 $ cd Visualize
 $ mkdir weights
 $ python download_checkpoint.py
+$ python main.py
+```
+
+## Set config device
+Setting your inference device: "cpu || cuda"
+```
+$ cd Visualize
+```
+Edit device: "cpu" or "cuda"
+
+
+## Start Service
+```
+$ cd Visualize
 $ python main.py
 ```
 
